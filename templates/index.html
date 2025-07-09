@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Inicio - M&L Tech{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-20 sm:py-24 lg:py-28 bg-slate-950 text-white" data-aos="fade-up" data-aos-duration="1000">
+  <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+    Tecnología que <span class="text-blue-500">IMPULSA</span> tu <br />
+    <span class="text-blue-500 drop-shadow">CRECIMIENTO</span> digital
+  </h1>
+
+  <p class="text-lg sm:text-xl text-slate-300 mb-8 max-w-3xl">
+    Desarrollamos plataformas web, automatizamos procesos clave y conectamos tus sistemas con integraciones modernas, seguras y a medida.
+  </p>
+  <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded transition">
+    Hablemos de tu proyecto
+  </a>
+</section>
+
+
+
+<!-- SERVICIOS -->
+<section class="py-20 bg-slate-950 text-white" id="servicios">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-14" data-aos="fade-up">Qué ofrecemos</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {% set servicios = [
+        ['ti-world', 'Desarrollo Web', 'Sitios modernos, adaptables y veloces.'],
+        ['ti-cpu', 'Automatizaciones', 'Scripts en Python para tareas repetitivas.'],
+        ['ti-api', 'Integraciones API', 'Conectamos herramientas con APIs RESTful.'],
+        ['ti-brain', 'Consultoría Técnica', 'Asesoramiento full‑stack estratégico.'],
+        ['ti-database', 'Backends robustos', 'Arquitectura y lógica de negocio sólidas.'],
+        ['ti-headphones', 'Soporte post‑desarrollo', 'Acompañamiento y mejoras evolutivas.']
+      ] %}
+      {% for icon, title, desc in servicios %}
+        <div class="group bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-2xl hover:scale-105 transition duration-300 text-center" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 100 }}">
+          <i class="ti {{ icon }} text-4xl text-blue-400 mb-4"></i>
+          <h3 class="text-lg font-semibold mb-2">{{ title }}</h3>
+          <p class="text-slate-400 text-sm">{{ desc }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- TECNOLOGÍAS -->
+<section class="py-16 bg-slate-900 text-white" id="tecnologias" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center px-4">
+    <h2 class="text-2xl font-semibold mb-10">Tecnologías que usamos</h2>
+    <div class="flex flex-wrap justify-center items-center gap-10">
+      {% set tecnologias = [
+        ['ti-brand-python', 'Python'],
+        ['ti-server', 'Flask'],
+        ['ti-brand-html5', 'HTML5'],
+        ['ti-code', 'Tailwind CSS'],
+        ['ti-brand-github', 'GitHub'],
+        ['ti-api', 'REST APIs'],
+        ['ti-cloud', 'Deploy & Cloud']
+      ] %}
+      {% for icon, name in tecnologias %}
+        <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
+          <i class="ti {{ icon }} text-4xl text-blue-300"></i>
+          <span class="mt-2 text-sm">{{ name }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-20 bg-slate-950 text-white text-center" data-aos="fade-up" id="cta">
+  <div class="max-w-2xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
+    <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>
+    <a href="{{ url_for('contacto') }}" class="bg-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">Contactanos hoy</a>
+  </div>
+</section>
+
+{% endblock %}

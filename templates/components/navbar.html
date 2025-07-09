@@ -1,0 +1,65 @@
+<nav
+  x-data="{ scrolled: false, open: false }"
+  x-init="scrolled = window.scrollY > 20"
+  @scroll.window="scrolled = window.scrollY > 20"
+  :class="scrolled ? 'bg-slate-900/90 border-b border-white/10 shadow-sm backdrop-blur' : 'bg-white/80 shadow-sm backdrop-blur border-b border-slate-200/50'"
+  class="sticky top-0 z-50 transition-all duration-300"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- LOGO -->
+      <a href="{{ url_for('index') }}" class="flex items-center space-x-0.05">
+        <img src="{{ url_for('static', filename='assets/icons/logoheader.png') }}"
+            alt="Logo M&L Tech"
+            class="h-22 sm:h-26 w-auto object-contain"
+            style="max-width: 90px;" />
+        <span :class="scrolled ? 'text-white' : 'text-slate-800'" class="text-2xl font-semibold tracking-tight hidden sm:inline-block">
+          M&L <span class="text-blue-500">Tech</span>
+        </span>
+      </a>
+
+      <!-- NAV LINKS DESKTOP -->
+      <div
+        class="hidden md:flex items-center space-x-6 text-base font-medium"
+        :class="scrolled ? 'text-white' : 'text-slate-800'"
+      >
+        <a href="{{ url_for('index') }}" class="hover:text-blue-500 transition">Inicio</a>
+        <a href="{{ url_for('servicios') }}" class="hover:text-blue-500 transition">Servicios</a>
+        <a href="{{ url_for('portfolio') }}" class="hover:text-blue-500 transition">Proyectos</a>
+        <a href="{{ url_for('quienes_somos') }}" class="hover:text-blue-500 transition">Quiénes somos</a>
+        <a href="{{ url_for('contacto') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Contacto
+        </a>
+      </div>
+
+
+      <!-- BOTÓN MOBILE -->
+      <div class="md:hidden">
+        <button @click="open = !open" class="focus:outline-none text-slate-800 dark:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div x-show="open"
+      x-transition
+      class="md:hidden px-4 pb-4 space-y-2 bg-slate-900/90 backdrop-blur"
+      @click.outside="open = false">
+    <a href="{{ url_for('index') }}" class="block text-base text-white hover:text-blue-400">Inicio</a>
+    <a href="{{ url_for('servicios') }}" class="block text-base text-white hover:text-blue-400">Servicios</a>
+    <a href="{{ url_for('portfolio') }}" class="block text-base text-white hover:text-blue-400">Proyectos</a>
+    <a href="{{ url_for('quienes_somos') }}" class="block text-base text-white hover:text-blue-400">Quiénes somos</a>
+    <a href="{{ url_for('contacto') }}" class="block text-base font-medium bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      Contacto
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<!-- src/templates/servicios.html -->
+{% extends "base.html" %}
+{% block title %}Servicios - M&L Tech{% endblock %}
+{% block content %}
+
+<section class="py-24 bg-slate-100 text-gray-800" id="servicios">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h1 class="text-3xl font-bold mb-6" data-aos="fade-up">Nuestros Servicios</h1>
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      <div class="bg-white border p-6 rounded shadow" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-2">Automatizaciones con Python</h3>
+        <p class="text-sm text-gray-600">Ahorro de tiempo y reducción de errores con scripts eficientes.</p>
+      </div>
+      <div class="bg-white border p-6 rounded shadow" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-2">Desarrollo Web a medida</h3>
+        <p class="text-sm text-gray-600">Sitios y apps modernas, rápidas y escalables.</p>
+      </div>
+      <div class="bg-white border p-6 rounded shadow" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-2">Integraciones API</h3>
+        <p class="text-sm text-gray-600">Conectamos tus sistemas con APIs RESTful y automatizamos flujos.</p>
+      </div>
+      <div class="bg-white border p-6 rounded shadow" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold mb-2">Consultoría Tecnológica</h3>
+        <p class="text-sm text-gray-600">Te ayudamos a tomar decisiones estratégicas en base a tecnología.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

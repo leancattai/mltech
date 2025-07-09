@@ -1,0 +1,27 @@
+<!-- src/templates/includes/head.html -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="M&L Tech - Soluciones tecnológicas a medida" />
+  <title>{% block title %}M&L Tech{% endblock %}</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10/dist/ext/class-tools.js"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS (animaciones on scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Tabler Icons Webfont -->
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.34.0/tabler-icons.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.svg') }}" />
+</head>

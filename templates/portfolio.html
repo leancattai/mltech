@@ -1,0 +1,36 @@
+<!-- src/templates/portfolio.html -->
+{% extends "base.html" %}
+{% block title %}Portfolio - M&L Tech{% endblock %}
+{% block content %}
+
+<section class="py-24 bg-slate-100 text-gray-800" id="portfolio">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+
+    <h1 class="text-3xl font-bold mb-4" data-aos="fade-up">Proyectos recientes</h1>
+    <p class="text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
+      Algunos casos reales donde aplicamos nuestras soluciones tecnológicas.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 bg-white rounded-lg shadow border hover:shadow-lg transition" data-aos="fade-up">
+        <h2 class="font-semibold text-xl mb-1">Sitio para Vinoteca</h2>
+        <p class="text-sm text-gray-600">E-commerce con backend integrado y pagos online.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow border hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="font-semibold text-xl mb-1">CRM personalizado</h2>
+        <p class="text-sm text-gray-600">Automatización de reportes y seguimiento de clientes.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow border hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="font-semibold text-xl mb-1">Sistema para Colegio de Abogados</h2>
+        <p class="text-sm text-gray-600">Portal público + backoffice con login, pagos y administración.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow border hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="font-semibold text-xl mb-1">Dashboards con Python</h2>
+        <p class="text-sm text-gray-600">Análisis de datos y visualización para Call Center en tiempo real.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

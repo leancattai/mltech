@@ -1,0 +1,63 @@
+<!-- src/templates/quienes-somos.html -->
+{% extends "base.html" %}
+{% block title %}Quiénes Somos - M&L Tech{% endblock %}
+{% block content %}
+
+<section class="py-24 bg-slate-950 text-white">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <!-- TÍTULO PRINCIPAL -->
+    <h1 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+      Somos M&L Tech
+    </h1>
+
+    <!-- PRESENTACIÓN -->
+    <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+      <div data-aos="fade-right">
+        <h2 class="text-2xl font-semibold mb-4">Un equipo. Una visión.</h2>
+        <p class="text-slate-300 mb-4">
+          M&L Tech nace de una conexión laboral genuina entre Leandro y Mariano, compañeros en una empresa tecnológica que los unió por sus valores, compromiso y forma de trabajar.
+        </p>
+        <p class="text-slate-400">
+          Con una visión compartida y complementaria, decidieron fundar una startup ágil, moderna y versátil, con el propósito de brindar soluciones integrales en tecnología sin limitarse a un solo rubro o especialidad.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-left">
+        <img src="{{ url_for('static', filename='assets/images/Logoblack.jfif') }}"
+             alt="Logo M&L Tech"
+             class="mx-auto h-40 object-contain rounded-lg shadow-lg">
+      </div>
+    </div>
+
+    <!-- EQUIPO -->
+    <div class="grid md:grid-cols-2 gap-10 mb-16">
+      <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 shadow-md hover:shadow-xl transition" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold mb-2 text-white">Leandro</h3>
+        <p class="text-slate-300">Responsable del Frontend y estructura visual de los proyectos. Apasionado por el diseño limpio, la accesibilidad y la experiencia de usuario.</p>
+      </div>
+      <div class="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 shadow-md hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-xl font-semibold mb-2 text-white">Mariano</h3>
+        <p class="text-slate-300">Encargado del Backend. Preciso, metódico y con sólida experiencia en desarrollo de APIs, automatizaciones y arquitectura de sistemas robustos.</p>
+      </div>
+    </div>
+
+    <!-- VISIÓN -->
+    <div data-aos="fade-up" class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-2xl font-semibold mb-4">¿Por qué M&L Tech?</h2>
+      <p class="text-slate-400">
+        Vimos una necesidad clara en el mercado: empresas que ofrecían soluciones fragmentadas. Nosotros decidimos ir más allá. En M&L Tech ofrecemos desarrollo web, automatizaciones, integraciones y soluciones a medida para cualquier desafío tecnológico.
+      </p>
+    </div>
+
+    <!-- CLIENTE DESTACADO -->
+    <div class="text-center" data-aos="fade-up">
+      <h3 class="text-lg uppercase tracking-widest text-blue-400 font-semibold mb-2">Primer proyecto</h3>
+      <p class="text-slate-300">
+        Nuestro primer cliente fue el <strong>Colegio de Abogados de San Rafael</strong>, con quienes implementamos una solución integral web. A partir de allí, seguimos construyendo relaciones sólidas con nuevos clientes.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

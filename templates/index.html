@@ -3,7 +3,24 @@
 {% block content %}
 
 <!-- HERO -->
-<section class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-20 sm:py-24 lg:py-28 bg-slate-950 text-white" data-aos="fade-up" data-aos-duration="1000">
+<section class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-20 sm:py-24 lg:py-28 text-white relative overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
+
+  <!-- FONDO ANIMADO SVG -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg class="absolute w-full h-full opacity-10" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4" />
+          <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="400" cy="300" r="280" fill="url(#grad)">
+        <animate attributeName="r" values="280;300;280" dur="6s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+
+  <!-- CONTENIDO -->
   <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
     Tecnología que <span class="text-blue-500">IMPULSA</span> tu <br />
     <span class="text-blue-500 drop-shadow">CRECIMIENTO</span> digital
@@ -17,10 +34,8 @@
   </a>
 </section>
 
-
-
 <!-- SERVICIOS -->
-<section class="py-20 bg-slate-950 text-white" id="servicios">
+<section class="pt-10 pb-20 text-white" id="servicios">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-14" data-aos="fade-up">Qué ofrecemos</h2>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -44,23 +59,23 @@
 </section>
 
 <!-- TECNOLOGÍAS -->
-<section class="py-16 bg-slate-900 text-white" id="tecnologias" data-aos="fade-up">
-  <div class="max-w-5xl mx-auto text-center px-4">
+<section class="py-24 text-white" id="tecnologias" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto text-center px-4">
     <h2 class="text-2xl font-semibold mb-10">Tecnologías que usamos</h2>
     <div class="flex flex-wrap justify-center items-center gap-10">
       {% set tecnologias = [
-        ['ti-brand-python', 'Python'],
-        ['ti-server', 'Flask'],
-        ['ti-brand-html5', 'HTML5'],
-        ['ti-code', 'Tailwind CSS'],
-        ['ti-brand-github', 'GitHub'],
-        ['ti-api', 'REST APIs'],
-        ['ti-cloud', 'Deploy & Cloud']
+        ['<i class="ti ti-brand-python text-blue-400 text-5xl"></i>', 'Python'],
+        ['<i class="ti ti-server-cog text-white text-5xl"></i>', 'Flask'],
+        ['<i class="ti ti-brand-html5 text-orange-400 text-5xl"></i>', 'HTML5'],
+        ['<i class="ti ti-brand-css3 text-cyan-400 text-5xl"></i>', 'Tailwind CSS'],
+        ['<i class="ti ti-brand-github text-gray-300 text-5xl"></i>', 'GitHub'],
+        ['<i class="ti ti-api-app text-purple-400 text-5xl"></i>', 'REST APIs'],
+        ['<i class="ti ti-cloud-upload text-sky-400 text-5xl"></i>', 'Deploy & Cloud']
       ] %}
-      {% for icon, name in tecnologias %}
+      {% for icon, nombre in tecnologias %}
         <div class="flex flex-col items-center hover:scale-110 transition-transform duration-300">
-          <i class="ti {{ icon }} text-4xl text-blue-300"></i>
-          <span class="mt-2 text-sm">{{ name }}</span>
+          {{ icon|safe }}
+          <span class="mt-2 text-sm">{{ nombre }}</span>
         </div>
       {% endfor %}
     </div>
@@ -68,7 +83,7 @@
 </section>
 
 <!-- CTA FINAL -->
-<section class="py-20 bg-slate-950 text-white text-center" data-aos="fade-up" id="cta">
+<section class="py-20 text-white text-center" data-aos="fade-up" id="cta">
   <div class="max-w-2xl mx-auto px-4">
     <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
     <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>

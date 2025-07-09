@@ -5,6 +5,19 @@
   <meta name="description" content="M&L Tech - Soluciones tecnológicas a medida" />
   <title>{% block title %}M&L Tech{% endblock %}</title>
 
+  <style>
+  @keyframes backgroundScroll {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animate-backgroundScroll {
+    background-size: 400% 400%;
+    animation: backgroundScroll 30s ease infinite;
+  }
+  </style>
+
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 

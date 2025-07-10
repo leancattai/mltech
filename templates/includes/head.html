@@ -2,67 +2,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO básico -->
+
+  <!-- SEO y accesibilidad -->
+  <title>{% block title %}M&L Tech{% endblock %}</title>
   <meta name="description" content="Somos M&L Tech. Desarrollamos plataformas web, automatizaciones en Python e integraciones API para impulsar tu negocio." />
   <meta name="keywords" content="M&L Tech, desarrollo web, automatizaciones, Python, APIs, consultoría tecnológica, integración de sistemas" />
   <meta name="author" content="M&L Tech" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="{{ SITE_URL }}{{ request.path }}" />
 
-  <!-- Open Graph (redes sociales) -->
-  <meta property="og:title" content="M&L Tech - Soluciones tecnológicas personalizadas">
-  <meta property="og:description" content="Creamos plataformas web, automatizamos procesos y conectamos tus sistemas con APIs modernas.">
-  <meta property="og:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}">
-  <meta property="og:url" content="https://mltech.com"> <!-- Cambiar si tenés dominio real -->
-  <meta property="og:type" content="website">
+  <!-- Open Graph (para compartir en redes sociales) -->
+  <meta property="og:title" content="M&L Tech - Soluciones tecnológicas personalizadas" />
+  <meta property="og:description" content="Creamos plataformas web, automatizamos procesos y conectamos tus sistemas con APIs modernas." />
+  <meta property="og:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}" />
+  <meta property="og:url" content="{{ SITE_URL }}{{ request.path }}" />
+  <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="M&L Tech - Soluciones Tecnológicas">
-  <meta name="twitter:description" content="Desarrollo web, automatizaciones y APIs a medida.">
-  <meta name="twitter:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}">
+  <meta name="twitter:title" content="M&L Tech - Soluciones Tecnológicas" />
+  <meta name="twitter:description" content="Desarrollo web, automatizaciones y APIs a medida." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}" />
 
-  <title>{% block title %}M&L Tech{% endblock %}</title>
-
-  <style>
-    /* Fondo con gradiente animado */
-    @keyframes backgroundScroll {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .animate-backgroundScroll {
-      background-size: 400% 400%;
-      animation: backgroundScroll 12s ease-in-out infinite;
-    }
-
-    /* Íconos flotantes del hero */
-    @keyframes floating {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
-    }
-    .animate-floating {
-      animation: floating 10s ease-in-out infinite;
-    }
-    .animate-floating-delay {
-      animation: floating 14s ease-in-out infinite;
-    }
-
-    /* Animación global en cascada */
-    @keyframes cascadeFloat {
-      0% { transform: translateY(100vh); opacity: 0; }
-      30% { opacity: 1; }
-      100% { transform: translateY(-100vh); opacity: 0; }
-    }
-
-    .cascade-icon {
-      animation-name: cascadeFloat;
-      animation-duration: 30s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      position: absolute;
-    }
-  </style>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.svg') }}" type="image/svg+xml" />
+  <link rel="alternate icon" href="{{ url_for('static', filename='assets/icons/logo.png') }}" type="image/png" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -81,9 +45,43 @@
   <!-- Tabler Icons Webfont -->
   <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.34.0/tabler-icons.min.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.svg') }}" />
+  <!-- Fondo animado + floating icons -->
+  <style>
+    @keyframes backgroundScroll {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-backgroundScroll {
+      background-size: 400% 400%;
+      animation: backgroundScroll 12s ease-in-out infinite;
+    }
 
-  <!-- Clases dinámicas generadas por Jinja -->
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .animate-floating {
+      animation: floating 10s ease-in-out infinite;
+    }
+    .animate-floating-delay {
+      animation: floating 14s ease-in-out infinite;
+    }
+
+    @keyframes cascadeFloat {
+      0% { transform: translateY(100vh); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .cascade-icon {
+      animation-name: cascadeFloat;
+      animation-duration: 30s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      position: absolute;
+    }
+  </style>
+
   {% include 'components/float-icons-style.jinja' %}
 </head>

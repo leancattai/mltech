@@ -1,4 +1,3 @@
-<!-- src/templates/servicios.html -->
 {% extends "base.html" %}
 {% block title %}Servicios - M&L Tech{% endblock %}
 {% block content %}
@@ -7,7 +6,9 @@
   <div class="max-w-5xl mx-auto px-4 text-center">
     <h1 class="text-3xl font-bold mb-6" data-aos="fade-up">Nuestros Servicios</h1>
 
-    {% include "components/servicios-grid.html" %}
+    <div role="list" aria-label="Listado de servicios ofrecidos por M&L Tech">
+      {% include "components/servicios-grid.html" %}
+    </div>
 
   </div>
 </section>

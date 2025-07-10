@@ -1,9 +1,8 @@
-<!-- src/templates/quienes-somos.html -->
 {% extends "base.html" %}
 {% block title %}Quiénes Somos - M&L Tech{% endblock %}
 {% block content %}
 
-<section class="py-24 sm:py-20 md:py-28 bg-slate-950 text-white">
+<section class="py-24 sm:py-20 md:py-28 bg-slate-950 text-white" aria-label="Sección sobre nosotros">
   <div class="max-w-5xl mx-auto px-4">
 
     <!-- TÍTULO PRINCIPAL -->
@@ -12,7 +11,7 @@
     </h1>
 
     <!-- PRESENTACIÓN -->
-    <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
+    <section role="region" aria-label="Presentación del equipo" class="grid md:grid-cols-2 gap-10 items-center mb-20">
       <div data-aos="fade-right">
         <h2 class="text-2xl font-semibold mb-4">Un equipo. Una visión.</h2>
         <p class="text-slate-300 mb-4 leading-relaxed">
@@ -24,14 +23,14 @@
       </div>
       <div class="text-center" data-aos="fade-left">
         <img src="{{ url_for('static', filename='assets/icons/logoheader.png') }}"
-            alt="Logo M&L Tech"
+            alt="Logo de M&L Tech"
             loading="lazy"
             class="mx-auto h-80 object-contain rounded-lg shadow-md border border-white/10">
       </div>
-    </div>
+    </section>
 
     <!-- EQUIPO -->
-    <div class="grid md:grid-cols-2 gap-6 mb-20">
+    <section role="region" aria-label="Integrantes del equipo M&L Tech" class="grid md:grid-cols-2 gap-6 mb-20">
       <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/10 shadow-md hover:shadow-xl transition duration-300" data-aos="zoom-in">
         <h3 class="text-xl font-semibold mb-2 text-white">Leandro</h3>
         <p class="text-slate-200 leading-relaxed">Responsable del Frontend y estructura visual de los proyectos. Apasionado por el diseño limpio, la accesibilidad y la experiencia de usuario.</p>
@@ -40,26 +39,25 @@
         <h3 class="text-xl font-semibold mb-2 text-white">Mariano</h3>
         <p class="text-slate-200 leading-relaxed">Encargado del Backend. Preciso, metódico y con sólida experiencia en desarrollo de APIs, automatizaciones y arquitectura de sistemas robustos.</p>
       </div>
-    </div>
+    </section>
 
     <!-- VISIÓN -->
-    <div data-aos="fade-up" class="text-center max-w-3xl mx-auto mb-16">
+    <section role="region" aria-label="Visión de M&L Tech" data-aos="fade-up" class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-2xl font-semibold mb-4">¿Por qué M&L Tech?</h2>
       <p class="text-slate-200 leading-relaxed">
         Vimos una necesidad clara en el mercado: empresas que ofrecían soluciones fragmentadas. Nosotros decidimos ir más allá. En M&L Tech ofrecemos desarrollo web, automatizaciones, integraciones y soluciones a medida para cualquier desafío tecnológico.
       </p>
-    </div>
+    </section>
 
     <!-- CLIENTE DESTACADO -->
-    <div class="text-center" data-aos="fade-up">
+    <section role="region" aria-label="Primer cliente destacado" class="text-center" data-aos="fade-up">
       <h3 class="text-lg uppercase tracking-widest text-blue-400 font-semibold mb-2">Primer proyecto</h3>
       <p class="text-slate-300 leading-relaxed">
         Nuestro primer cliente fue el <strong>Colegio de Abogados de San Rafael</strong>, con quienes implementamos una solución integral web. A partir de allí, seguimos construyendo relaciones sólidas con nuevos clientes.
       </p>
-    </div>
+    </section>
 
   </div>
 </section>
-
 
 {% endblock %}

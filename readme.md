@@ -73,10 +73,10 @@ ml-tech/
 
 ### 📌 Notas
 
-El sitio está optimizado para SEO básico y accesibilidad.
+- El sitio está optimizado para SEO básico y accesibilidad.
 
-Todas las secciones son responsivas y animadas con AOS.js.
+- Todas las secciones son responsivas y animadas con AOS.js.
 
-Listo para conectar a backend Flask si se desea.
+- Listo para conectar a backend Flask si se desea.
 
-Favicon SVG personalizado incluido en /static/assets/icons/.
+- Favicon SVG personalizado incluido en /static/assets/icons/.

@@ -1,0 +1,25 @@
+<!-- ÍCONOS FLOTANTES GLOBALES EN CASCADA INFINITA -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+{% set iconos_flotantes = [
+    'ti-cloud-computing', 'ti-api', 'ti-brain', 'ti-router', 'ti-device-desktop-analytics',
+    'ti-robot', 'ti-settings-cog', 'ti-database', 'ti-terminal-2', 'ti-shield-lock',
+    'ti-device-mobile-code', 'ti-code-dots', 'ti-code', 'ti-chart-bar', 'ti-brackets',
+    'ti-puzzle', 'ti-chip', 'ti-key', 'ti-device-gamepad', 'ti-building-skyscraper',
+    'ti-math-function', 'ti-hierarchy', 'ti-vector-bezier', 'ti-layout-grid', 'ti-app-window',
+    'ti-browser-check', 'ti-device-imac', 'ti-code-circle', 'ti-cloud-code',
+    'ti-circuit-resistor', 'ti-bluetooth', 'ti-lifebuoy', 'ti-network', 'ti-sitemap',
+    'ti-antenna-bars-5', 'ti-server-2'
+] %}
+{% set posiciones_left = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95] %}
+{% set delays = range(0, 61, 2) %}
+{% for icon in iconos_flotantes %}
+    {% set left = posiciones_left|random %}
+    {% set delay = delays[loop.index0 % delays|length] %}
+    {% set color = ['text-blue-400','text-cyan-400','text-purple-400','text-teal-400','text-indigo-400','text-pink-400','text-yellow-400','text-green-400','text-rose-400','text-orange-400','text-lime-400','text-fuchsia-400','text-amber-400','text-gray-400','text-emerald-300']|random %}
+    <div class="absolute top-[calc(100vh+60px)] left-{{ left }} h-[300vh] overflow-visible cascade-icon delay-{{ delay }}">
+    <span class="text-2xl sm:text-3xl md:text-4xl {{ color }}">
+        <i class="ti {{ icon }}"></i>
+    </span>
+    </div>
+{% endfor %}
+</div>

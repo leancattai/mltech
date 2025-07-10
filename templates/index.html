@@ -4,7 +4,6 @@
 
 <!-- HERO -->
 <section class="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-20 sm:py-24 lg:py-28 text-white relative overflow-hidden" data-aos="fade-up" data-aos-duration="1000">
-
   <!-- FONDO ANIMADO SVG -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <svg class="absolute w-full h-full opacity-10" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
@@ -20,41 +19,6 @@
     </svg>
   </div>
 
-    <!-- ÍCONOS FLOTANTES EN FONDO -->
-  <div class="absolute inset-0 z-0 pointer-events-none">
-    <!-- Grupo superior -->
-    <div class="animate-floating absolute top-[20%] left-[12%] text-blue-500/40 text-5xl">
-      <i class="ti ti-cloud-computing"></i>
-    </div>
-    <div class="animate-floating-delay absolute top-[18%] right-[18%] text-cyan-400/40 text-4xl">
-      <i class="ti ti-api"></i>
-    </div>
-    <div class="animate-floating absolute top-[25%] left-[35%] text-purple-400/40 text-4xl">
-      <i class="ti ti-cpu"></i>
-    </div>
-    <div class="animate-floating-delay absolute top-[28%] right-[30%] text-teal-400/40 text-3xl">
-      <i class="ti ti-router"></i>
-    </div>
-
-    <!-- Grupo inferior -->
-    <div class="animate-floating absolute bottom-[20%] left-[15%] text-indigo-400/40 text-5xl">
-      <i class="ti ti-device-desktop-analytics"></i>
-    </div>
-    <div class="animate-floating-delay absolute bottom-[25%] right-[20%] text-blue-300/40 text-4xl">
-      <i class="ti ti-brain"></i>
-    </div>
-    <div class="animate-floating absolute bottom-[18%] left-[40%] text-pink-400/30 text-3xl">
-      <i class="ti ti-robot"></i>
-    </div>
-    <div class="animate-floating-delay absolute bottom-[12%] right-[35%] text-sky-400/40 text-5xl">
-      <i class="ti ti-settings-cog"></i>
-    </div>
-  </div>
-
-
-
-
-  <!-- CONTENIDO -->
   <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
     Tecnología que <span class="text-blue-500">IMPULSA</span> tu <br />
     <span class="text-blue-500 drop-shadow">CRECIMIENTO</span> digital
@@ -64,8 +28,7 @@
     Desarrollamos plataformas web, automatizamos procesos clave y conectamos tus sistemas con integraciones modernas, seguras y a medida.
   </p>
 
-  <!-- BOTONES -->
-  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2" data-aos="fade-up" data-aos-delay="100">
+  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2">
     <a href="{{ url_for('contacto') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded transition">
       Hablemos de tu proyecto
     </a>
@@ -74,27 +37,18 @@
     </a>
   </div>
 
-  <!-- ÍCONOS DE VALOR -->
-  <div class="flex flex-wrap justify-center items-center gap-6 mt-10 text-sm text-slate-400" data-aos="fade-up" data-aos-delay="200">
-    <div class="flex items-center gap-2">
-      <i class="ti ti-cpu text-blue-400 text-lg"></i> Automatización
-    </div>
-    <div class="flex items-center gap-2">
-      <i class="ti ti-api text-blue-400 text-lg"></i> Integraciones API
-    </div>
-    <div class="flex items-center gap-2">
-      <i class="ti ti-world text-blue-400 text-lg"></i> Desarrollo Web
-    </div>
+  <div class="flex flex-wrap justify-center items-center gap-6 mt-10 text-sm text-slate-400">
+    <div class="flex items-center gap-2"><i class="ti ti-cpu text-blue-400 text-lg"></i> Automatización</div>
+    <div class="flex items-center gap-2"><i class="ti ti-api text-blue-400 text-lg"></i> Integraciones API</div>
+    <div class="flex items-center gap-2"><i class="ti ti-world text-blue-400 text-lg"></i> Desarrollo Web</div>
   </div>
 </section>
 
-
-<!-- SECCIÓN DE SERVICIOS DESTACADOS -->
-<section class="py-24 text-white" id="servicios">
+<!-- SERVICIOS -->
+<section class="py-24 text-white" id="servicios" data-aos="fade-up">
   <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">¿Qué hacemos en M&L Tech?</h2>
-
-    <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="text-4xl font-bold mb-12">¿Qué hacemos en M&L Tech?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
       <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow hover:shadow-xl transition text-left">
         <i class="ti ti-cpu text-4xl text-blue-400 mb-4"></i>
         <h3 class="text-xl font-semibold mb-2">Automatizaciones inteligentes</h3>
@@ -120,8 +74,7 @@
   </div>
 </section>
 
-
-<!-- TECNOLOGÍAS EN CARDS CON FONDO TRANSLÚCIDO -->
+<!-- TECNOLOGÍAS -->
 <section class="py-24 text-white" id="tecnologias" data-aos="fade-up">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold mb-12">Tecnologías que impulsan nuestras soluciones</h2>
@@ -146,14 +99,14 @@
   </div>
 </section>
 
-
-
 <!-- CTA FINAL -->
-<section class="py-20 text-white text-center" data-aos="fade-up" id="cta">
+<section class="py-24 text-white text-center" data-aos="fade-up" id="cta">
   <div class="max-w-2xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
+    <h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
     <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>
-    <a href="{{ url_for('contacto') }}" class="bg-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">Contactanos hoy</a>
+    <a href="{{ url_for('contacto') }}" class="bg-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+      Contactanos hoy
+    </a>
   </div>
 </section>
 

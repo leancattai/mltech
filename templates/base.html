@@ -6,6 +6,7 @@
   <body x-data class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased">
     
     {% include "components/navbar.html" %}
+    {% include "components/float-icons.html" %}
 
     <main id="main-content">
       {% block content %}{% endblock %}
@@ -21,7 +22,17 @@
         once: true,
         offset: 60
       });
-    </script>
+
+      // 🔧 Solución para asegurar que las animaciones CSS se activen
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.cascade-icon').forEach(icon => {
+          // Forzamos un reflow y reiniciamos animación
+          void icon.offsetWidth;
+          icon.style.animationPlayState = "running";
+        });
+      });
+</script>
+
 
 
     <!-- HTMX: Loading indicator -->

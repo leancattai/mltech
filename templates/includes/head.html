@@ -24,7 +24,6 @@
 
   <title>{% block title %}M&L Tech{% endblock %}</title>
 
-
   <style>
     /* Fondo con gradiente animado */
     @keyframes backgroundScroll {
@@ -48,8 +47,22 @@
     .animate-floating-delay {
       animation: floating 14s ease-in-out infinite;
     }
-  </style>
 
+    /* Animación global en cascada */
+    @keyframes cascadeFloat {
+      0% { transform: translateY(100vh); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .cascade-icon {
+      animation-name: cascadeFloat;
+      animation-duration: 30s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      position: absolute;
+    }
+  </style>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -70,4 +83,7 @@
 
   <!-- Favicon -->
   <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.svg') }}" />
+
+  <!-- Clases dinámicas generadas por Jinja -->
+  {% include 'components/float-icons-style.jinja' %}
 </head>

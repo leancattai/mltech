@@ -3,35 +3,34 @@
 
     <!-- LOGO FOOTER -->
     <img src="{{ url_for('static', filename='assets/icons/logo.png') }}"
-         alt="Logo M&L Tech"
-         class="h-14 mx-auto mb-6 object-contain"
-         style="max-width: 220px;" />
+        alt="Logo M&L Tech"
+        class="h-14 mx-auto mb-6 object-contain"
+        style="max-width: 220px;" />
 
     <!-- COPYRIGHT -->
-    <p class="text-sm text-slate-400 mb-6">
+    <p class="text-sm text-slate-200 mb-6">
       © {{ now.year }} <strong>M&L Tech</strong>. Todos los derechos reservados.
     </p>
 
     <!-- LINKS -->
     <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-400 mb-6">
-      <a href="{{ url_for('servicios') }}" class="hover:text-blue-400 transition">Servicios</a>
-      <a href="{{ url_for('portfolio') }}" class="hover:text-blue-400 transition">Proyectos</a>
-      <a href="{{ url_for('quienes_somos') }}" class="hover:text-blue-400 transition">Quiénes somos</a>
-      <a href="{{ url_for('contacto') }}" class="hover:text-blue-400 transition">Contacto</a>
+      <a href="{{ url_for('servicios') }}" class="hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Servicios</a>
+      <a href="{{ url_for('portfolio') }}" class="hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Proyectos</a>
+      <a href="{{ url_for('quienes_somos') }}" class="hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Quiénes somos</a>
+      <a href="{{ url_for('contacto') }}" class="hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Contacto</a>
     </div>
 
     <!-- REDES SOCIALES -->
     <div class="flex justify-center space-x-5 mt-4 text-xl">
-      <a href="#" class="hover:text-blue-500 transition" aria-label="Instagram">
+      <a href="#" aria-label="Instagram">
         <i class="ti ti-brand-instagram"></i>
       </a>
-      <a href="#" class="hover:text-blue-500 transition" aria-label="LinkedIn">
+      <a href="#" aria-label="LinkedIn">
         <i class="ti ti-brand-linkedin"></i>
       </a>
-      <a href="#" class="hover:text-blue-500 transition" aria-label="GitHub">
+      <a href="#" aria-label="GitHub">
         <i class="ti ti-brand-github"></i>
       </a>
     </div>
-
   </div>
 </footer>

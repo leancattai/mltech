@@ -1,15 +1,16 @@
-# src/app.py
-from flask import Flask, render_template
+# main.py
+from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'  # necesaria para usar flash messages
 
-# INYECCIÓN GLOBAL PARA {{ now.year }}
+# Inyección global para {{ now.year }}
 @app.context_processor
 def inject_now():
     return {'now': datetime.now()}
 
-# RUTAS PRINCIPALES
+# Rutas principales
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -28,8 +29,17 @@ def quienes_somos():
 
 @app.route("/contacto", methods=["GET", "POST"])
 def contacto():
+    if request.method == "POST":
+        nombre = request.form.get("nombre")
+        email = request.form.get("email")
+        mensaje = request.form.get("mensaje")
+        
+        # Acá podrías guardar en base de datos, enviar email, etc.
+        flash("Mensaje enviado correctamente. ¡Gracias por contactarnos!", "success")
+        return redirect(url_for("contacto"))
+
     return render_template("contacto.html")
 
-# EJECUCIÓN LOCAL
+# Ejecución local
 if __name__ == "__main__":
     app.run(debug=True)

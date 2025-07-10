@@ -2,19 +2,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="M&L Tech - Soluciones tecnológicas a medida" />
+  
+  <!-- SEO básico -->
+  <meta name="description" content="Somos M&L Tech. Desarrollamos plataformas web, automatizaciones en Python e integraciones API para impulsar tu negocio." />
+  <meta name="keywords" content="M&L Tech, desarrollo web, automatizaciones, Python, APIs, consultoría tecnológica, integración de sistemas" />
+  <meta name="author" content="M&L Tech" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (redes sociales) -->
+  <meta property="og:title" content="M&L Tech - Soluciones tecnológicas personalizadas">
+  <meta property="og:description" content="Creamos plataformas web, automatizamos procesos y conectamos tus sistemas con APIs modernas.">
+  <meta property="og:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}">
+  <meta property="og:url" content="https://mltech.com"> <!-- Cambiar si tenés dominio real -->
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="M&L Tech - Soluciones Tecnológicas">
+  <meta name="twitter:description" content="Desarrollo web, automatizaciones y APIs a medida.">
+  <meta name="twitter:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}">
+
   <title>{% block title %}M&L Tech{% endblock %}</title>
 
+
   <style>
-  @keyframes backgroundScroll {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  .animate-backgroundScroll {
-    background-size: 400% 400%;
-    animation: backgroundScroll 30s ease infinite;
-  }
+    /* Fondo con gradiente animado */
+    @keyframes backgroundScroll {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-backgroundScroll {
+      background-size: 400% 400%;
+      animation: backgroundScroll 12s ease-in-out infinite;
+    }
+
+    /* Íconos flotantes del hero */
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .animate-floating {
+      animation: floating 10s ease-in-out infinite;
+    }
+    .animate-floating-delay {
+      animation: floating 14s ease-in-out infinite;
+    }
   </style>
 
 

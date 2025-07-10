@@ -1,15 +1,12 @@
 <!-- src/templates/base.html -->
 <!DOCTYPE html>
 <html lang="es" hx-boost="true" hx-ext="class-tools">
-  <body class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white">
-
   {% include "includes/head.html" %}
 
-  <body x-data class="bg-white text-gray-900 antialiased">
-
+  <body x-data class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased">
+    
     {% include "components/navbar.html" %}
 
-    <!-- Bloque de contenido dinámico -->
     <main id="main-content">
       {% block content %}{% endblock %}
     </main>
@@ -18,10 +15,16 @@
 
     <!-- AOS init -->
     <script>
-      AOS.init();
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 60
+      });
     </script>
 
-    <!-- HTMX: Loading indicator (opcional si querés mostrar carga) -->
+
+    <!-- HTMX: Loading indicator -->
     <script>
       document.body.addEventListener('htmx:configRequest', (event) => {
         event.detail.headers['X-Requested-With'] = 'XMLHttpRequest'

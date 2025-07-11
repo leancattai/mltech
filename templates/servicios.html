@@ -2,12 +2,36 @@
 {% block title %}Servicios - M&L Tech{% endblock %}
 {% block content %}
 
-<section class="py-24 sm:py-20 md:py-28 bg-slate-100 text-gray-800" id="servicios">
-  <div class="max-w-5xl mx-auto px-4 text-center">
-    <h1 class="text-3xl font-bold mb-6" data-aos="fade-up">Nuestros Servicios</h1>
+<section class="py-24 sm:py-20 md:py-28 text-white relative" aria-label="Sección de servicios">
+  <div class="max-w-6xl mx-auto px-4 text-center">
 
-    <div role="list" aria-label="Listado de servicios ofrecidos por M&L Tech">
-      {% include "components/servicios-grid.html" %}
+    <h1 class="text-4xl font-extrabold mb-12 drop-shadow" data-aos="fade-up">
+      Nuestros <span class="text-blue-500">Servicios</span>
+    </h1>
+
+    <div class="grid md:grid-cols-2 gap-6 text-left" role="region" aria-label="Listado de servicios ofrecidos" data-aos="fade-up" data-aos-delay="200">
+
+      {% set servicios = [
+        ["ti-code", "Automatizaciones con Python", "Ahorro de tiempo y reducción de errores con scripts personalizados para tareas repetitivas, monitoreo y notificaciones automáticas."],
+        ["ti-world-www", "Desarrollo Web a medida", "Diseño y programación de sitios y aplicaciones web modernas, optimizadas para rendimiento, accesibilidad y escalabilidad."],
+        ["ti-api", "Integraciones con APIs", "Conectamos tus sistemas con servicios externos para sincronizar datos, automatizar procesos o facilitar interoperabilidad."],
+        ["ti-compass", "Consultoría tecnológica", "Evaluamos tus procesos y proponemos soluciones digitales con visión estratégica, rápida implementación y retorno medible."],
+        ["ti-chart-dots-3", "Business Intelligence & Dashboards", "Diseño de paneles de control, reportes en tiempo real y análisis de datos con Python y Power BI. Toma decisiones basadas en evidencia."],
+        ["ti-database-cog", "Data Warehousing", "Diseñamos entornos robustos para centralizar, consultar y analizar grandes volúmenes de datos provenientes de múltiples fuentes."],
+        ["ti-transfer", "Procesos ETL", "Desarrollamos flujos de extracción, transformación y carga de datos (ETL) para alimentar dashboards, bases de datos y sistemas de gestión."],
+        ["ti-message-chatbot", "Desarrollo de Chatbots & IA", "Creamos asistentes virtuales inteligentes para atención al cliente, automatización de consultas y procesos internos 24/7."]
+      ] %}
+
+      {% for servicio in servicios %}
+      <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow transform transition-transform duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:border-white/20 card-glow">
+        <div class="flex items-center gap-3 mb-3 text-blue-400">
+          <i class="ti {{ servicio[0] }}" aria-hidden="true"></i>
+          <h3 class="text-xl font-semibold text-white">{{ servicio[1] }}</h3>
+        </div>
+        <p class="text-slate-300 text-sm leading-relaxed">{{ servicio[2] }}</p>
+      </div>
+      {% endfor %}
+
     </div>
 
   </div>

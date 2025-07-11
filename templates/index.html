@@ -101,13 +101,14 @@
 
 <!-- CTA FINAL -->
 <section class="py-24 text-white text-center" data-aos="fade-up" id="cta">
-  <div class="max-w-2xl mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
-    <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>
-    <a href="{{ url_for('contacto') }}" class="bg-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
-      Contactanos hoy
-    </a>
-  </div>
+  <div class="backdrop-blur-sm bg-black/10 rounded-xl p-8 border border-white/10 shadow-md" data-aos="fade-up">
+  <h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
+  <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>
+  <a href="{{ url_for('contacto') }}" class="bg-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+    Contactanos hoy
+  </a>
+</div>
+
 </section>
 
 {% endblock %}

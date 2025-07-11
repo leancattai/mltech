@@ -2,16 +2,38 @@
 {% block title %}Portfolio - M&L Tech{% endblock %}
 {% block content %}
 
-<section class="py-24 sm:py-20 md:py-28 bg-slate-100 text-gray-800" id="portfolio">
-  <div class="max-w-5xl mx-auto px-4 text-center">
-    <h1 class="text-3xl font-bold mb-4" data-aos="fade-up">Proyectos recientes</h1>
-    <p class="text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
-      Algunos casos reales donde aplicamos nuestras soluciones tecnológicas.
+<section class="py-24 sm:py-20 md:py-28 text-white" aria-label="Sección de proyectos">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+
+    <h1 class="text-4xl font-extrabold mb-6 drop-shadow" data-aos="fade-up">
+      Proyectos <span class="text-blue-500">recientes</span>
+    </h1>
+
+    <p class="text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      Algunos casos reales donde aplicamos nuestras soluciones tecnológicas a medida.
     </p>
 
-    <div role="list" aria-label="Listado de proyectos">
-      {% include "components/portfolio-grid.html" %}
+    <div class="grid md:grid-cols-2 gap-6 text-left" role="region" aria-label="Listado de proyectos" data-aos="fade-up" data-aos-delay="200">
+
+      {% for proyecto in [
+        ["Sistema para Colegio de Abogados", "Portal público y backoffice con login, pagos online y gestión administrativa. Backend en Flask + MySQL."],
+        ["Monitoreo de ventas con alertas", "Lectura de CRM, seguimiento de tiempos por usuario y alertas automáticas vía WhatsApp por baja productividad o congestión."],
+        ["Alertas para atención entrante", "Análisis de layout, disponibilidad, requeridos y rendimiento en campañas entrantes de soporte al cliente."],
+        ["Dashboards y análisis de datos", "Automatización de reportes en Python, dashboards en Power BI y visualización de KPIs en tiempo real para áreas operativas."],
+        ["Turnos para centro médico", "Agenda online integrada con Google Calendar y recordatorios automáticos por WhatsApp para pacientes."],
+        ["Automatización de tareas administrativas", "Eliminación de tareas repetitivas mediante scripts personalizados en Python. Ahorro de cientos de horas anualmente."],
+        ["Asistentes virtuales con IA", "Desarrollo de chatbots inteligentes conectados a bases de datos y sistemas internos. Atención 24/7 con lenguaje natural."],
+        ["Plataforma de gestión de reclamos", "Sistema interno para seguimiento, asignación y resolución de reclamos con paneles para equipos de soporte."],
+        ["Optimización de sistema contable", "Refactorización de código, mejoras en consultas SQL y exportes automáticos para balances mensuales."]
+      ] %}
+      <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow transform transition-transform duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:border-white/20 card-glow">
+        <h2 class="font-semibold text-xl mb-1 text-white">{{ proyecto[0] }}</h2>
+        <p class="text-slate-300 text-sm">{{ proyecto[1] }}</p>
+      </div>
+      {% endfor %}
+
     </div>
+
   </div>
 </section>
 

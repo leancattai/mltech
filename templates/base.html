@@ -1,9 +1,9 @@
 <!-- src/templates/base.html -->
 <!DOCTYPE html>
-<html lang="es" hx-boost="true" hx-ext="class-tools">
+<html lang="es">
   {% include "includes/head.html" %}
 
-  <body x-data class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased">
+  <body x-data class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased scroll-smooth">
     
     {% include "components/navbar.html" %}
     {% include "components/float-icons.html" %}
@@ -16,22 +16,28 @@
 
     <!-- AOS init -->
     <script>
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 60
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          offset: 60
+        });
+
+        // 🔁 Forzar re-render por si Alpine o HTMX afecta el DOM
+        setTimeout(() => {
+          AOS.refreshHard();
+        }, 100);
       });
 
-      // 🔧 Solución para asegurar que las animaciones CSS se activen
+      // 🔧 Reactivar animaciones flotantes al cargar
       window.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll('.cascade-icon').forEach(icon => {
-          // Forzamos un reflow y reiniciamos animación
           void icon.offsetWidth;
           icon.style.animationPlayState = "running";
         });
       });
-</script>
+    </script>
 
     <!-- HTMX: Loading indicator -->
     <script>

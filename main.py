@@ -1,5 +1,6 @@
 # main.py
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import send_from_directory
 from datetime import datetime
 import os
 
@@ -32,16 +33,34 @@ def quienes_somos():
 @app.route("/contacto", methods=["GET", "POST"])
 def contacto():
     if request.method == "POST":
+        # Antispam simple
+        if request.form.get("antispam"):
+            return redirect(url_for("index"))
+
         nombre = request.form.get("nombre")
         email = request.form.get("email")
         mensaje = request.form.get("mensaje")
-        
+
         # Acá podrías guardar en base de datos, enviar email, etc.
         flash("Mensaje enviado correctamente. ¡Gracias por contactarnos!", "success")
         return redirect(url_for("contacto"))
 
     return render_template("contacto.html")
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html"), 404
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt", mimetype="text/plain")
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml", mimetype="application/xml")
+
+
+
 # Ejecución local
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.environ.get("FLASK_DEBUG", "false").lower() == "true")

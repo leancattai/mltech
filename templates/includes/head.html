@@ -1,15 +1,16 @@
-<!-- src/templates/includes/head.html -->
+<!-- templates/includes/head.html -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="Spanish" />
+  <meta name="generator" content="Flask" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- SEO y accesibilidad -->
   <title>{% block title %}M&L Tech{% endblock %}</title>
   <meta name="description" content="Somos M&L Tech. Desarrollamos plataformas web, automatizaciones en Python e integraciones API para impulsar tu negocio." />
   <meta name="keywords" content="M&L Tech, desarrollo web, automatizaciones, Python, APIs, consultoría tecnológica, integración de sistemas" />
   <meta name="author" content="M&L Tech" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0f172a" />
 
   {% if request %}
     <link rel="canonical" href="{{ SITE_URL }}{{ request.path }}" />
@@ -22,22 +23,23 @@
   <meta property="og:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}" />
   <meta property="og:type" content="website" />
 
-
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="M&L Tech - Soluciones Tecnológicas" />
   <meta name="twitter:description" content="Desarrollo web, automatizaciones y APIs a medida." />
   <meta name="twitter:image" content="{{ url_for('static', filename='assets/icons/logo.png') }}" />
 
-  <!-- Favicon -->
+  <!-- Favicons -->
   <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.svg') }}" type="image/svg+xml" />
   <link rel="alternate icon" href="{{ url_for('static', filename='assets/icons/logo.png') }}" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/icons/apple-touch-icon.png') }}" />
+  <link rel="preload" href="{{ url_for('static', filename='assets/icons/logo.png') }}" as="image" />
 
   <!-- Rendimiento -->
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- HTMX -->
@@ -54,7 +56,7 @@
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.34.0/tabler-icons.min.css" />
 
-  <!-- Fondo animado -->
+  <!-- Estilos animaciones personalizadas -->
   <style>
     @keyframes backgroundScroll {
       0% { background-position: 0% 50%; }
@@ -69,25 +71,25 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-30px); }
     }
-    .animate-floating {
-      animation: floating 10s ease-in-out infinite;
+    .animate-floating { animation: floating 10s ease-in-out infinite; }
+    .animate-floating-delay { animation: floating 14s ease-in-out infinite; }
+    @keyframes glowFadeIn {
+      0% {
+        box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+      100% {
+        box-shadow: 0 0 25px 4px rgba(59, 130, 246, 0.5);
+        border-color: rgba(59, 130, 246, 0.4);
+      }
     }
-    .animate-floating-delay {
-      animation: floating 14s ease-in-out infinite;
+    .card-glow {
+      transition: all 0.4s ease;
     }
-    @keyframes cascadeFloat {
-      0% { transform: translateY(100vh); opacity: 0; }
-      30% { opacity: 1; }
-      100% { transform: translateY(-100vh); opacity: 0; }
+    .card-glow:hover {
+      animation: glowFadeIn 0.4s ease forwards;
+      transform: scale(1.03);
     }
-    .cascade-icon {
-      animation: cascadeFloat 30s linear infinite;
-      position: absolute;
-    }
-  </style>
-
-  <!-- Select custom -->
-  <style>
     select, select option {
       background-color: #1e293b;
       color: white;
@@ -99,29 +101,6 @@
     select option:hover {
       background-color: #334155;
       color: white;
-    }
-  </style>
-
-  <!-- Card hover glow -->
-  <style>
-    @keyframes glowFadeIn {
-      0% {
-        box-shadow: 0 0 0 rgba(59, 130, 246, 0);
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-      100% {
-        box-shadow: 0 0 25px 4px rgba(59, 130, 246, 0.5);
-        border-color: rgba(59, 130, 246, 0.4);
-      }
-    }
-
-    .card-glow {
-      transition: all 0.4s ease;
-    }
-
-    .card-glow:hover {
-      animation: glowFadeIn 0.4s ease forwards;
-      transform: scale(1.03);
     }
   </style>
 

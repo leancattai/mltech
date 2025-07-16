@@ -5,16 +5,15 @@
 <section class="py-24 sm:py-20 md:py-28 text-white" aria-label="Sección de proyectos">
   <div class="max-w-6xl mx-auto px-4 text-center">
 
-    <h1 class="text-4xl font-extrabold mb-6 drop-shadow" data-aos="fade-up">
+    <h1 class="text-4xl font-extrabold mb-6 drop-shadow" data-aos="fade-down" data-aos-delay="100">
       Proyectos <span class="text-blue-500">recientes</span>
     </h1>
 
-    <p class="text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+    <p class="text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
       Algunos casos reales donde aplicamos nuestras soluciones tecnológicas a medida.
     </p>
 
-    <div class="grid md:grid-cols-2 gap-6 text-left" role="region" aria-label="Listado de proyectos" data-aos="fade-up" data-aos-delay="200">
-
+    <div class="grid md:grid-cols-2 gap-6 text-left" role="region" aria-label="Listado de proyectos">
       {% for proyecto in [
         ["Sistema para Colegio de Abogados", "Portal público y backoffice con login, pagos online y gestión administrativa. Backend en Flask + MySQL."],
         ["Monitoreo de ventas con alertas", "Lectura de CRM, seguimiento de tiempos por usuario y alertas automáticas vía WhatsApp por baja productividad o congestión."],
@@ -26,15 +25,17 @@
         ["Plataforma de gestión de reclamos", "Sistema interno para seguimiento, asignación y resolución de reclamos con paneles para equipos de soporte."],
         ["Optimización de sistema contable", "Refactorización de código, mejoras en consultas SQL y exportes automáticos para balances mensuales."]
       ] %}
-      <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow transform transition-transform duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:border-white/20 card-glow">
+      <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow transform transition-transform duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:border-white/20 card-glow"
+           data-aos="{{ 'fade-right' if loop.index is even else 'fade-left' }}"
+           data-aos-delay="{{ loop.index * 100 }}">
         <h2 class="font-semibold text-xl mb-1 text-white">{{ proyecto[0] }}</h2>
         <p class="text-slate-300 text-sm">{{ proyecto[1] }}</p>
       </div>
       {% endfor %}
-
     </div>
 
   </div>
 </section>
 
 {% endblock %}
+

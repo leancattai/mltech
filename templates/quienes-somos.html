@@ -6,14 +6,14 @@
   <div class="max-w-6xl mx-auto px-4 space-y-24">
 
     <!-- TÍTULO PRINCIPAL -->
-    <div class="text-center" data-aos="fade-up">
+    <div class="text-center" data-aos="fade-down" data-aos-delay="100">
       <h1 class="text-4xl font-extrabold leading-tight drop-shadow">
         Somos <span class="text-blue-500">M&L Tech</span>
       </h1>
     </div>
 
     <!-- PRESENTACIÓN -->
-    <section role="region" aria-label="Presentación del equipo" class="grid md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
+    <section role="region" aria-label="Presentación del equipo" class="grid md:grid-cols-2 gap-10 items-center" data-aos="fade-up" data-aos-delay="200">
       <div class="backdrop-blur-sm bg-black/10 rounded-xl p-6 border border-white/10 shadow">
         <h2 class="text-2xl font-semibold mb-4 text-white">Un equipo. Una visión.</h2>
         <p class="text-slate-300 mb-4 leading-relaxed">
@@ -23,7 +23,7 @@
           Con una visión compartida y complementaria, decidieron fundar una startup ágil, moderna y versátil, con el propósito de brindar soluciones integrales en tecnología sin limitarse a un solo rubro o especialidad.
         </p>
       </div>
-      <div class="text-center" data-aos="fade-left">
+      <div class="text-center" data-aos="zoom-in-left" data-aos-delay="300">
         <img src="{{ url_for('static', filename='assets/icons/logoheader.png') }}"
              alt="Logo de M&L Tech"
              loading="lazy"
@@ -32,14 +32,14 @@
     </section>
 
     <!-- EQUIPO -->
-    <section role="region" aria-label="Integrantes del equipo M&L Tech" class="grid md:grid-cols-2 gap-6" data-aos="fade-up">
-      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow hover:shadow-xl transition">
+    <section role="region" aria-label="Integrantes del equipo M&L Tech" class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-right" data-aos-delay="100">
         <h3 class="text-xl font-semibold mb-2 text-white">Leandro</h3>
         <p class="text-slate-300 leading-relaxed text-sm">
           Responsable del Frontend y estructura visual de los proyectos. Apasionado por el diseño limpio, la accesibilidad y la experiencia de usuario.
         </p>
       </div>
-      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos-delay="100">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="fade-left" data-aos-delay="200">
         <h3 class="text-xl font-semibold mb-2 text-white">Mariano</h3>
         <p class="text-slate-300 leading-relaxed text-sm">
           Encargado del Backend. Preciso, metódico y con sólida experiencia en desarrollo de APIs, automatizaciones y arquitectura de sistemas robustos.
@@ -48,7 +48,7 @@
     </section>
 
     <!-- VISIÓN -->
-    <section role="region" aria-label="Visión de M&L Tech" class="text-center max-w-3xl mx-auto relative z-10" data-aos="fade-up">
+    <section role="region" aria-label="Visión de M&L Tech" class="text-center max-w-3xl mx-auto relative z-10" data-aos="flip-up" data-aos-delay="100">
       <div class="backdrop-blur-sm bg-black/10 rounded-xl p-6 border border-white/10 shadow">
         <h2 class="text-2xl font-semibold mb-4 text-white">¿Por qué M&L Tech?</h2>
         <p class="text-slate-300 leading-relaxed">
@@ -59,7 +59,7 @@
     </section>
 
     <!-- CLIENTE DESTACADO -->
-    <section role="region" aria-label="Primer cliente destacado" class="text-center relative z-10" data-aos="fade-up">
+    <section role="region" aria-label="Primer cliente destacado" class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="200">
       <div class="backdrop-blur-sm bg-black/10 rounded-xl p-6 border border-white/10 shadow inline-block">
         <h3 class="text-sm uppercase tracking-widest text-blue-400 font-semibold mb-2">Primer proyecto</h3>
         <p class="text-slate-300 leading-relaxed">
@@ -73,3 +73,4 @@
 </section>
 
 {% endblock %}
+

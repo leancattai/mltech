@@ -2,10 +2,9 @@
 {% block title %}Contacto - M&L Tech{% endblock %}
 {% block content %}
 
-
 <section class="pt-20 pb-32 text-white relative" id="contacto" aria-label="Sección de contacto">
   <!-- TÍTULO + SUBTÍTULO -->
-  <div class="text-center mb-10" data-aos="fade-up">
+  <div class="text-center mb-10" data-aos="fade-down" data-aos-delay="100">
     <h2 class="text-3xl sm:text-4xl font-semibold mb-2 text-white">
       ¿Listo para llevar tu proyecto al siguiente nivel?
     </h2>
@@ -13,44 +12,41 @@
       Completá el formulario y en breve nos pondremos en contacto.
     </p>
   </div>
+
+  <!-- FORMULARIO -->
   <form method="POST"
         action="{{ url_for('contacto') }}"
         class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg p-6 space-y-6 max-w-2xl mx-auto"
-        data-aos="zoom-in"
+        data-aos="zoom-in" data-aos-delay="200"
         aria-label="Formulario de contacto profesional">
 
     <!-- Grid de 2 columnas -->
     <div class="grid md:grid-cols-2 gap-6">
-      <!-- Nombre -->
-      <div>
+      <div data-aos="fade-right" data-aos-delay="300">
         <label for="nombre" class="block text-sm mb-1 text-slate-300">Nombre completo</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required
               class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
       </div>
 
-      <!-- Email -->
-      <div>
+      <div data-aos="fade-left" data-aos-delay="300">
         <label for="email" class="block text-sm mb-1 text-slate-300">Email</label>
         <input type="email" id="email" name="email" placeholder="tu@email.com" required
               class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
       </div>
 
-      <!-- Teléfono -->
-      <div>
+      <div data-aos="fade-right" data-aos-delay="400">
         <label for="telefono" class="block text-sm mb-1 text-slate-300">Teléfono (opcional)</label>
         <input type="tel" id="telefono" name="telefono" placeholder="+54 9 XXX XXX XXXX"
               class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
       </div>
 
-      <!-- Empresa -->
-      <div>
+      <div data-aos="fade-left" data-aos-delay="400">
         <label for="empresa" class="block text-sm mb-1 text-slate-300">Empresa / Proyecto</label>
         <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa o marca"
               class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
       </div>
 
-      <!-- Área de interés -->
-      <div>
+      <div data-aos="fade-right" data-aos-delay="500">
         <label for="tema" class="block text-sm mb-1 text-slate-300">Área de interés</label>
         <select id="tema" name="tema" required
                 class="w-full bg-transparent border border-white/20 text-white p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -63,8 +59,7 @@
         </select>
       </div>
 
-      <!-- Presupuesto -->
-      <div>
+      <div data-aos="fade-left" data-aos-delay="500">
         <label for="presupuesto" class="block text-sm mb-1 text-slate-300">Presupuesto estimado (opcional)</label>
         <select id="presupuesto" name="presupuesto"
                 class="w-full bg-transparent border border-white/20 text-white p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -78,7 +73,7 @@
     </div>
 
     <!-- Mensaje -->
-    <div>
+    <div data-aos="fade-up" data-aos-delay="600">
       <label for="mensaje" class="block text-sm mb-1 text-slate-300">Mensaje</label>
       <textarea id="mensaje" name="mensaje" rows="6"
                 placeholder="Contanos brevemente qué necesitás, tecnologías, ideas o tiempos..."
@@ -87,7 +82,7 @@
     </div>
 
     <!-- Botón -->
-    <div class="text-center pt-2">
+    <div class="text-center pt-2" data-aos="zoom-in-up" data-aos-delay="700">
       <button type="submit"
               class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded shadow transition w-full sm:w-auto">
         Enviar mensaje
@@ -97,3 +92,4 @@
 </section>
 
 {% endblock %}
+

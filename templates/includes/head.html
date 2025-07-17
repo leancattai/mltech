@@ -102,6 +102,23 @@
       background-color: #334155;
       color: white;
     }
+    
+    [x-cloak] { display: none !important; }
+    
+    @keyframes bounce-down {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(12px); /* rebote suave y visible */
+      }
+    }
+
+    .animate-bounce-soft {
+      animation: bounce-down 1.6s infinite ease-in-out;
+    }
+
+
   </style>
 
   {% include 'components/float-icons-style.jinja' %}

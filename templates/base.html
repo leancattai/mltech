@@ -1,10 +1,28 @@
-<!-- src/templates/base.html -->
 <!DOCTYPE html>
 <html lang="es">
   {% include "includes/head.html" %}
 
-  <body x-data class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased scroll-smooth">
-    
+  <body
+    hx-boost="true"
+    hx-target="#main-content"
+    hx-swap="innerHTML transition:true"
+    class="bg-gradient-to-br from-blue-950 via-slate-950 to-black animate-backgroundScroll text-white antialiased scroll-smooth"
+  >
+
+    <!-- Loader -->
+    <div id="page-loader"
+         class="fixed inset-0 z-[1000] bg-black/60 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none"
+         x-data="{ show: false }"
+         x-show="show"
+         x-transition.opacity
+         x-init="
+           document.body.addEventListener('htmx:beforeRequest', () => show = true);
+           document.body.addEventListener('htmx:afterSwap', () => show = false);
+         "
+         x-cloak>
+      <div class="w-10 h-10 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
     {% include "components/navbar.html" %}
     {% include "components/float-icons.html" %}
 
@@ -14,36 +32,43 @@
 
     {% include "components/footer.html" %}
 
-    <!-- AOS init -->
+    <!-- AOS -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        AOS.init({
-          duration: 800,
-          easing: 'ease-in-out',
-          once: true,
-          offset: 60
-        });
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({ duration: 800, easing: "ease-in-out", once: true, offset: 60 });
+        setTimeout(() => AOS.refreshHard(), 100);
+      });
+    </script>
 
-        // 🔁 Forzar re-render por si Alpine o HTMX afecta el DOM
-        setTimeout(() => {
+    <!-- HTMX Setup -->
+    <script>
+      document.body.addEventListener("htmx:configRequest", (e) => {
+        e.detail.headers["X-Requested-With"] = "XMLHttpRequest";
+      });
+
+      document.body.addEventListener("htmx:afterSwap", (e) => {
+        if (e.detail.target.id === "main-content") {
+          window.scrollTo(0, 0); // 👈 scroll inmediato
           AOS.refreshHard();
-        }, 100);
-      });
-
-      // 🔧 Reactivar animaciones flotantes al cargar
-      window.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll('.cascade-icon').forEach(icon => {
-          void icon.offsetWidth;
-          icon.style.animationPlayState = "running";
-        });
+          if (window.Alpine && Alpine.initTree) Alpine.initTree(e.detail.target);
+        }
       });
     </script>
 
-    <!-- HTMX: Loading indicator -->
+    <!-- Smooth scroll anclas internas -->
     <script>
-      document.body.addEventListener('htmx:configRequest', (event) => {
-        event.detail.headers['X-Requested-With'] = 'XMLHttpRequest'
+      document.addEventListener('click', function (e) {
+        const target = e.target.closest('a[href^="#"]');
+        if (target !== null) {
+          const id = target.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
       });
     </script>
+
   </body>
 </html>

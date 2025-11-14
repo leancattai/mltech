@@ -25,16 +25,16 @@
   </p>
 
   <div class="flex flex-col sm:flex-row justify-center gap-4 mt-2" data-aos="zoom-in" data-aos-delay="400">
-    <a href="{{ url_for('contacto') }}"
-       hx-get="{{ url_for('contacto') }}"
+    <a href="{{ url_for('contacto.contacto') }}"
+       hx-get="{{ url_for('contacto.contacto') }}"
        hx-target="#main-content"
        hx-swap="innerHTML transition:true"
        hx-push-url="true"
        class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded transition">
       Hablemos de tu proyecto
     </a>
-    <a href="{{ url_for('portfolio') }}"
-       hx-get="{{ url_for('portfolio') }}"
+    <a href="{{ url_for('portfolio.portfolio') }}"
+       hx-get="{{ url_for('portfolio.portfolio') }}"
        hx-target="#main-content"
        hx-swap="innerHTML transition:true"
        hx-push-url="true"
@@ -80,8 +80,8 @@
     </div>
 
     <div class="mt-10" data-aos="zoom-in-up" data-aos-delay="500">
-      <a href="{{ url_for('servicios') }}"
-         hx-get="{{ url_for('servicios') }}"
+      <a href="{{ url_for('servicios.servicios') }}"
+         hx-get="{{ url_for('servicios.servicios') }}"
          hx-target="#main-content"
          hx-swap="innerHTML transition:true"
          hx-push-url="true"
@@ -122,8 +122,8 @@
   <div class="backdrop-blur-sm bg-black/10 rounded-xl p-8 border border-white/10 shadow-md" data-aos="zoom-in" data-aos-delay="200">
     <h2 class="text-4xl font-bold mb-6">¿Listo para transformar tu presencia digital?</h2>
     <p class="text-lg text-slate-300 mb-8">Construyamos soluciones sólidas y automatizadas para tu negocio.</p>
-    <a href="{{ url_for('contacto') }}"
-       hx-get="{{ url_for('contacto') }}"
+    <a href="{{ url_for('contacto.contacto') }}"
+       hx-get="{{ url_for('contacto.contacto') }}"
        hx-target="#main-content"
        hx-swap="innerHTML transition:true"
        hx-push-url="true"

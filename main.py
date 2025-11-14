@@ -4,6 +4,7 @@ from flask import send_from_directory
 from datetime import datetime
 from backend.routes import init_routes
 from backend.dev import init_dev_routes
+from backend.config.config_db import init_db
 import os
 
 app = Flask(__name__)
@@ -21,6 +22,7 @@ def inject_now():
 
 init_routes(app)
 init_dev_routes(app)
+init_db(app)
 
 
 

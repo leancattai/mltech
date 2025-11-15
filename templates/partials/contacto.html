@@ -11,7 +11,7 @@
 
   <!-- FORMULARIO -->
   <form method="POST"
-        action="{{ url_for('contacto') }}"
+        action="{{ url_for('contacto.contacto') }}"
         class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg p-6 space-y-6 max-w-2xl mx-auto"
         data-aos="zoom-in" data-aos-delay="200"
         aria-label="Formulario de contacto profesional">
@@ -19,10 +19,10 @@
     <input type="hidden" name="antispam" value="" />
 
     <!-- Grid de 2 columnas -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 gap-6"> 
       <div data-aos="fade-right" data-aos-delay="300">
-        <label for="nombre" class="block text-sm mb-1 text-slate-300">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required
+        <label for="name" class="block text-sm mb-1 text-slate-300">Nombre completo</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre y apellido" required
               class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
       </div>
 
@@ -45,8 +45,8 @@
       </div>
 
       <div data-aos="fade-right" data-aos-delay="500">
-        <label for="tema" class="block text-sm mb-1 text-slate-300">Área de interés</label>
-        <select id="tema" name="tema" required
+        <label for="area_interes" class="block text-sm mb-1 text-slate-300">Área de interés</label>
+        <select id="area_interes" name="area_interes" required
                 class="w-full bg-transparent border border-white/20 text-white p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
           <option value="" disabled selected hidden>Seleccioná una opción...</option>
           <option>Desarrollo Web</option>
@@ -72,8 +72,8 @@
 
     <!-- Mensaje -->
     <div data-aos="fade-up" data-aos-delay="600">
-      <label for="mensaje" class="block text-sm mb-1 text-slate-300">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="6"
+      <label for="message" class="block text-sm mb-1 text-slate-300">Mensaje</label>
+      <textarea id="message" name="message" rows="6"
                 placeholder="Contanos brevemente qué necesitás, tecnologías, ideas o tiempos..."
                 required
                 class="w-full bg-transparent border border-white/20 text-white p-3 rounded placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
